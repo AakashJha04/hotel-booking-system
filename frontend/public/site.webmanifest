@@ -1,0 +1,20 @@
+{
+  "name": "Hotel Booking App",
+  "short_name": "HotelBooking",
+  "theme_color": "#be1919",
+  "background_color": "#be1919",
+  "display": "browser",
+  "description": "A hotel booking application that allows users to search and book hotels.",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
