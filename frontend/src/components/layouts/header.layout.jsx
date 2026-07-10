@@ -5,7 +5,7 @@ import Icon from '../ui/icon'
 
 const Header = () => {
   return (
-    <header className="bg-brand py-2">
+    <header className="bg-brand py-2 shadow-md">
 
       <div className="container flex items-center justify-between">
 
@@ -16,8 +16,8 @@ const Header = () => {
         </div>
 
         <div id="auth" className="flex gap-2 justify-center items-center">
-          <Button className="bg-white cursor-pointer border-primary text-brand hover:bg-gray-200">Register</Button>
-          <Button className="bg-brand cursor-pointer border-primary text-white hover:bg-blue-700">Login</Button>
+          <Button className="bg-white cursor-pointer border-primary text-brand hover:bg-white/90">Register</Button>
+          <Button className="bg-brand cursor-pointer border border-white/40 text-white hover:brightness-90">Login</Button>
         </div>
 
       </div>

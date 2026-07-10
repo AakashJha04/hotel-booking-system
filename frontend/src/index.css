@@ -20,7 +20,7 @@
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 91%);
   --input: hsl(240 5.9% 90%);
-  --ring: hsl(212 100% 45%);
+  --ring: var(--brand-color);
   --radius: 0.5rem;
   --brand-color: #cb2957;
 
