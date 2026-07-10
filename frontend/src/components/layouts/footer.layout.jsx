@@ -1,5 +1,7 @@
 import React from 'react'
 import { FOOTER_SECTION } from '@/config/app.config'
+import { SOCIAL_LINKS } from '@/config/app.config'
+import Icon from '@/components/ui/icon'
 
 const Footer = () => {
   return (<div className='bg-secondary'>
@@ -21,6 +23,17 @@ const Footer = () => {
         ))}
       </div>
     </footer>
+    <div className='bg-brand py-4'>
+      <div className="container">
+        <div className="flex items-center gap-4">
+          {SOCIAL_LINKS.map((link, index) => (
+            <a key={index} href={link.href} className='text-white hover:text-gray-300'>
+              <Icon icon={link.icon} />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   </div>)
 }
 
