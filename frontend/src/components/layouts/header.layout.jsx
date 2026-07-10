@@ -2,7 +2,9 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <header className="bg-brand py-2">
+      <div>Header</div>
+    </header>
   )
 }
 

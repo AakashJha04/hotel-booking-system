@@ -8,7 +8,7 @@
   --card-foreground: hsl(0 0% 3.9%);
   --popover: hsl(0 0% 100%);
   --popover-foreground: hsl(0 0% 10%);
-  --primary: #CB2957;
+  --primary: #cb2957;
   --primary-foreground: hsl(0 0% 98%);
   --secondary: hsl(0 0% 96%);
   --secondary-foreground: hsl(240 5.9% 10%);
@@ -22,7 +22,7 @@
   --input: hsl(240 5.9% 90%);
   --ring: hsl(212 100% 45%);
   --radius: 0.5rem;
-  --brand-color: hsl(221 80% 33%);
+  --brand-color: #cb2957;
 
   /* Charts */
   --chart-1: hsl(12 76% 61%);
@@ -31,7 +31,6 @@
   --chart-4: hsl(43 74% 66%);
   --chart-5: hsl(27 87% 67%);
 }
-
 
 @theme inline {
   /* Colors */
@@ -80,11 +79,11 @@
   @apply border-border outline-ring/50;
 }
 body {
-  @apply bg-background text-foreground font-sans;
+  @apply bg-background font-sans text-foreground;
 }
 
 .container {
-  @apply max-w-max-width mx-auto p-padding;
+  @apply mx-auto max-w-max-width p-padding;
 }
 
 .scrollbar {
