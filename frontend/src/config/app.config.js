@@ -102,7 +102,7 @@ export const FOOTER_SECTION = [
   {
     title: 'About',
     links: [
-      { text: 'About Booking.com', href: 'https://codingshuttle.com' },
+      { text: 'About Booking.com', href: '#' },
       { text: 'How we work', href: '#' },
       { text: 'Sustainability', href: '#' },
       { text: 'Press centre', href: '#' },
