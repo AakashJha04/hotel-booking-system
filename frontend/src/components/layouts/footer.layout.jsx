@@ -11,7 +11,7 @@ const Footer = () => {
             <ul>
               {section.links.map((link, linkIndex) => (
                 <li key={linkIndex} >
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  <a href={link.href} className='text-sm hover:underline'>
                     {link.text}
                   </a>
                 </li>
