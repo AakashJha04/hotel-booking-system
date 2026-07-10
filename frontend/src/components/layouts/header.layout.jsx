@@ -1,5 +1,7 @@
 import React from 'react'
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
+import {SERVICE_LIST} from '@/config/app.config'
+import Icon from '../ui/icon'
 
 const Header = () => {
   return (
@@ -18,6 +20,15 @@ const Header = () => {
           <Button className="bg-brand cursor-pointer border-primary text-white hover:bg-blue-700">Login</Button>
         </div>
 
+      </div>
+
+      <div className="container flex items-center justify-center gap-2 py-2">
+        {SERVICE_LIST.map(item => 
+          <Button>
+            <Icon icon={item.icon} />
+            {item.title}
+          </Button>
+        )}
       </div>
 
     </header>
