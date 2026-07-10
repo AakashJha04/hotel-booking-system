@@ -2,6 +2,7 @@ import React from 'react'
 import { FOOTER_SECTION } from '@/config/app.config'
 import { SOCIAL_LINKS } from '@/config/app.config'
 import Icon from '@/components/ui/icon'
+import dayjs from 'dayjs'
 
 const Footer = () => {
   return (<div className='bg-secondary'>
@@ -24,7 +25,7 @@ const Footer = () => {
       </div>
     </footer>
     <div className='bg-brand py-4'>
-      <div className="container">
+      <div className="container flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           {SOCIAL_LINKS.map((link, index) => (
             <a key={index} href={link.href} className='text-white hover:text-gray-300'>
@@ -32,6 +33,10 @@ const Footer = () => {
             </a>
           ))}
         </div>
+
+        <p className='text-sm text-white'>
+          &copy; {dayjs().year()} Your Company. All rights reserved.
+        </p>
       </div>
     </div>
   </div>)
