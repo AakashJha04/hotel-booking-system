@@ -1,4 +1,4 @@
-import { Bed, CarFront, CarTaxiFront, FerrisWheel, Plane } from "lucide-react";
+import { Bed, CarFront, CarTaxiFront, FerrisWheel, Plane, Info, Star, Gem, Heart, Check, Zap, CircleCheck } from "lucide-react";
 
 export default {
   bed: Bed,
@@ -6,6 +6,28 @@ export default {
   car: CarFront,
   attraction: FerrisWheel,
   taxi: CarTaxiFront,
+  info: Info,
+  star: Star,
+  gem: Gem,
+  heart: Heart,
+  check: Check,
+  zap: Zap,
+  circleCheck: CircleCheck,
+  curve: ({ size = 24, ...props }) => (
+    <svg
+      width={size}
+      height={size}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M2 4c6 0 6 16 20 16" />
+    </svg>
+  ),
   twitter: ({ size = 24, ...props }) => (
     <svg
       width={size}
