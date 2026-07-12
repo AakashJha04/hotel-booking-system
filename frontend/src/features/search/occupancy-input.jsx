@@ -36,6 +36,7 @@ const OccupancyInput = ({ form }) => {
         sideOffset="1"
         align='start'
         className="p-4 w-80"
+        onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <FormField
           control={form.control}
@@ -50,6 +51,7 @@ const OccupancyInput = ({ form }) => {
                       size="icon"
                       variant="ghost"
                       className="size-10 text-primary hover:text-primary"
+                      disabled={field.value <= 1}
                       onClick={(e) => {
                         e.preventDefault();
                         field.onChange(field.value - 1);
@@ -57,7 +59,7 @@ const OccupancyInput = ({ form }) => {
                     >
                       <Icon icon="minus" />
                     </Button>
-                    <span>{field.value}</span>
+                    <span className="w-10 text-center tabular-nums">{field.value}</span>
                     <Button
                       size="icon"
                       variant="ghost"
