@@ -102,7 +102,7 @@ export const FOOTER_SECTION = [
   {
     title: 'About',
     links: [
-      { text: 'About Booking.com', href: '#' },
+      { text: 'About Booking.com', href: 'https://codingshuttle.com' },
       { text: 'How we work', href: '#' },
       { text: 'Sustainability', href: '#' },
       { text: 'Press centre', href: '#' },
@@ -119,4 +119,17 @@ export const SOCIAL_LINKS = [
   { icon: 'twitter', href: '#', title: 'Twitter' },
   { icon: 'instagram', href: '#', title: 'Instagram' },
   { icon: 'youtube', href: '#', title: 'Youtube' },
+];
+
+export const DESTINATIONS = [
+  { city: 'Jaipur', country: 'India' },
+  { city: 'Delhi', country: 'India' },
+  { city: 'Goa', country: 'India' },
+  { city: 'Gurgaon', country: 'India' },
+  { city: 'North Goa', country: 'India' },
+  { city: 'Mumbai', country: 'India' },
+  { city: 'Bangalore', country: 'India' },
+  { city: 'Hyderabad', country: 'India' },
+  { city: 'Chennai', country: 'India' },
+  { city: 'Pune', country: 'India' }
 ];
