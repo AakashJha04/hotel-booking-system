@@ -9,21 +9,15 @@ import {
 } from '@/components/ui/form';
 import Icon from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
+import { PATHS } from '@/config/path.config';
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Link } from 'react-router';
+import { useSignInForm } from './hooks/use-sign-in-form';
+
 
 const SingIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const form = useForm({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
-
-  const onSubmit = (data) => {
-    console.log('Got the data...', data);
-  };
+  const {form, handleSignInSubmit, pending} = useSignInForm();
 
   const handleHidePassword = (e) => {
     e.preventDefault();
@@ -34,7 +28,7 @@ const SingIn = () => {
     <>
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={form.handleSubmit(handleSignInSubmit)}
           className="w-full mt-8 space-y-5"
         >
           <FormField
@@ -78,6 +72,7 @@ const SingIn = () => {
             type="submit"
             className="w-full h-10"
             aria-label="Login to your Account"
+            disabled={pending}
           >
             Log in
           </Button>
@@ -85,10 +80,10 @@ const SingIn = () => {
       </Form>
       <div className="flex items-center justify-center mt-6">
         <span className="text-sm ">
-          Don't have an account? {/* TODO: replace with Link */}
-          <a href="" className="text-primary hover:underline">
+          Don't have an account? 
+          <Link to={PATHS.SIGN_UP} className="text-primary hover:underline">
             Create Account
-          </a>
+          </Link>
         </span>
       </div>
     </>

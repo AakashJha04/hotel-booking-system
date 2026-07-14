@@ -1,39 +1,63 @@
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { SERVICE_LIST } from '@/config/app.config'
-import Icon from '../ui/icon'
+import { Button } from '@/components/ui/button';
+import { SERVICE_LIST } from '@/config/app.config';
+import Icon from '../ui/icon';
+import { Link } from 'react-router';
+import { PATHS } from '@/config/path.config';
+import { useAuthContext } from '@/lib/providers/auth-context-provider';
 
 const Header = () => {
+  const { authenticatedUser } = useAuthContext();
+
   return (
-    <header className="bg-brand py-2 shadow-md">
-
-      <div className="container flex items-center justify-between">
-
+    <header className="bg-brand py-2">
+      <div className="container flex justify-between items-center">
         <div id="logo-wrapper">
-          <a href="#" aria-label="Go to Booking.com">
-            <img width={144} height={24} src="/assets/booking.com.svg" alt="Logo of Booking.com" />
-          </a>
+          <Link to="/" aria-label="Go to Booking.com">
+            <img
+              width={144}
+              height={24}
+              src="/assets/booking.com.svg"
+              alt="Logo of Booking.com"
+            />
+          </Link>
         </div>
-
         <div id="auth" className="flex gap-2 justify-center items-center">
-          <Button className="bg-white cursor-pointer border-primary text-brand hover:bg-white/90">Register</Button>
-          <Button className="bg-brand cursor-pointer border border-white/40 text-white hover:brightness-90">Login</Button>
+          {authenticatedUser.user ? (
+            <p>Hi, {authenticatedUser.user.name}</p>
+          ) : (
+            <>
+              <Button
+                className="bg-white cursor-pointer border-primary text-brand rounded-sm hover:bg-white/90"
+                asChild
+              >
+                <Link to={PATHS.SIGN_UP}>Register</Link>
+              </Button>
+              <Button
+                className="bg-brand cursor-pointer border border-white/40 text-white rounded-sm hover:brightness-90"
+                asChild
+              >
+                <Link to={PATHS.SIGN_IN}>Login</Link>
+              </Button>
+            </>
+          )}
         </div>
-
       </div>
-
-      <div className="container flex items-center justify-center gap-2 py-2">
-        {SERVICE_LIST.map(item =>
-          <Button className={`bg-transparent shadow-none font-normal rounded-full hover:bg-white/10 
-          cursor-pointer flex items-center gap-2 px-6 h-11 ${item.active && 'border border-white bg-white/10'}`} key={item.id}>
+      <div className="container flex gap-1 overflow-x-auto scrollbar">
+        {SERVICE_LIST.map((item) => (
+          <Button
+            key={item.id}
+            className={`bg-transparent shadow-none font-normal rounded-full hover:bg-white/10
+          cursor-pointer flex items-center justify-between gap-2 px-6 h-11 ${
+            item.active && 'border border-white bg-white/10'
+          }`}
+          >
             <Icon icon={item.icon} />
             {item.title}
           </Button>
-        )}
+        ))}
       </div>
-
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
